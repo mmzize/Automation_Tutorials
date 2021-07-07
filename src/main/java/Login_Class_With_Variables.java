@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class Login_Class_With_Variables {
 
@@ -13,8 +14,6 @@ public class Login_Class_With_Variables {
 
         String url ="http://demo.guru99.com/test/newtours/";
         driver.get(url);
-        
-        String Test_Results="";
 
         WebElement Sign_On = driver.findElement(By.xpath("//a[contains(.,'SIGN-ON')]"));
         Sign_On.click();
@@ -30,14 +29,6 @@ public class Login_Class_With_Variables {
 
         WebElement Actual_Results=driver.findElement(By.xpath("//h3[contains(.,'Login Successfully')]"));
 
-        if(Actual_Results.isDisplayed())
-        {
-            Test_Results = "PASSED";
-        }else
-            Test_Results = "FAILED";
-
-        System.out.println(Test_Results);
-
-        driver.quit();
+        Assert.assertTrue(Actual_Results.isDisplayed());
     }
 }
