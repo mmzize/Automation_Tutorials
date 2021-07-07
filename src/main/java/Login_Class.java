@@ -8,12 +8,12 @@ public class Login_Class {
 
         System.setProperty("webdriver.chrome.driver","C:\\MyCode\\Automation_Tutorials\\Drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-
-        String Test_Results="";
-
+        
         driver.manage().window().maximize();
 
         driver.get("http://demo.guru99.com/test/newtours/");
+
+        String Test_Results="";
 
         driver.findElement(By.xpath("//a[contains(.,'SIGN-ON')]")).click();
 
